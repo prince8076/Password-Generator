@@ -86,6 +86,11 @@ export default function App() {
                     placeholder="Enter length"
                     keyboardType='numeric'
                   />
+                  {touched.passwordLength && errors.passwordLength && (
+                    <Text style={styles.errorText}>
+                      {errors.passwordLength}
+                    </Text>
+                  )}
                 </View>
                 <View style={styles.checkboxContainer}>
                   <BouncyCheckbox
@@ -236,5 +241,9 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     width: '100%',
     textAlign: 'center',
+  },
+  errorText: {
+    fontSize: 12,
+    color: '#ff0d10',
   },
 });
